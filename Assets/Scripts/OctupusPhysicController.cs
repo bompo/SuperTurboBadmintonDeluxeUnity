@@ -13,6 +13,11 @@ public class OctupusPhysicController : MonoBehaviour {
 	[SerializeField]
 	private List<Rigidbody> lowerBones;
 
+	[SerializeField]
+	private Rigidbody racket;
+
+	[SerializeField]
+	private float sinDelay = 2f;
 
 	[SerializeField]
 	private Vector3 forceLowerBones = new Vector3(0,0,0);
@@ -22,6 +27,9 @@ public class OctupusPhysicController : MonoBehaviour {
 
 	[SerializeField]
 	private Vector3 forceHead = new Vector3(0,0.9f,0);
+
+	[SerializeField]
+	private Vector3 forceRacketBone = new Vector3(0,5f,0);
 		
 	private void OnEnable() {
 		Debug.Log ("OctupusPhysicController:OnEnable");
@@ -37,14 +45,16 @@ public class OctupusPhysicController : MonoBehaviour {
 
 		int i = 0;
 		foreach (var lowerBone in lowerBones) {
-			lowerBone.AddForce (forceLowerBones * Mathf.Sin((i/(float)lowerBones.Count) + Time.fixedTime));
+			lowerBone.AddForce (forceLowerBones * Mathf.Sin(((i/(float)lowerBones.Count) * sinDelay) + Time.fixedTime));
 			i++;
 		}
 
 		i = 0;
 		foreach (var upperBone in upperBones) {
-			upperBone.AddForce (forceUpperBones * Mathf.Sin((i/(float)upperBones.Count) + Time.fixedTime));
+			upperBone.AddForce (forceUpperBones * Mathf.Sin(((i/(float)upperBones.Count) * sinDelay) + Time.fixedTime));
 			i++;
 		}
+
+		racket.AddForce (forceRacketBone);
 	}
 }

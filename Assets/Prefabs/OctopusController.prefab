@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  forceLowerBones: {x: 0, y: 5, z: 0}
-  forceUpperBones: {x: 0, y: 0, z: 0}
+  sinDelay: 2
+  forceLowerBones: {x: 0, y: 15, z: 0}
+  forceUpperBones: {x: 0, y: 5, z: 0}
   forceHead: {x: 0, y: 0, z: 0}
