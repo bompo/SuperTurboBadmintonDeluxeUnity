@@ -147,10 +147,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1571778521072632, guid: 3dff223f91001984cb39696f993dda69, type: 2}
-      propertyPath: m_Name
-      value: Elephant
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dff223f91001984cb39696f993dda69, type: 2}
   m_IsPrefabParent: 0
