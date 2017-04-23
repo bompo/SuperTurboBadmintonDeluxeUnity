@@ -23,6 +23,46 @@ ModelImporter:
     100030: pool
     100032: //RootNode
     100034: water
+    100036: Armature
+    100038: bandana
+    100040: birdie
+    100042: body
+    100044: Bone.001
+    100046: Bone.002
+    100048: Bone.002_end
+    100050: Bone.003
+    100052: Bone.004
+    100054: Bone.004_end
+    100056: Bone.005
+    100058: Bone.006
+    100060: Bone.006_end
+    100062: Bone.007
+    100064: Bone.008
+    100066: Bone.008_end
+    100068: Bone.009
+    100070: Bone.010
+    100072: Bone.010_end
+    100074: Bone.011
+    100076: Bone.012
+    100078: Bone.012_end
+    100080: Bone.013
+    100082: Bone.014
+    100084: Bone.014_end
+    100086: Bone.015
+    100088: Bone.016
+    100090: Bone.016_end
+    100092: Camera
+    100094: Camera.002
+    100096: Cylinder
+    100098: Cylinder.001
+    100100: eye
+    100102: Head
+    100104: Head_end
+    100106: Lamp
+    100108: Plane
+    100110: pupile
+    100112: suckers
+    100114: tentacles
     400000: Cube.001
     400002: Cube.002
     400004: net
@@ -41,6 +81,46 @@ ModelImporter:
     400030: pool
     400032: //RootNode
     400034: water
+    400036: Armature
+    400038: bandana
+    400040: birdie
+    400042: body
+    400044: Bone.001
+    400046: Bone.002
+    400048: Bone.002_end
+    400050: Bone.003
+    400052: Bone.004
+    400054: Bone.004_end
+    400056: Bone.005
+    400058: Bone.006
+    400060: Bone.006_end
+    400062: Bone.007
+    400064: Bone.008
+    400066: Bone.008_end
+    400068: Bone.009
+    400070: Bone.010
+    400072: Bone.010_end
+    400074: Bone.011
+    400076: Bone.012
+    400078: Bone.012_end
+    400080: Bone.013
+    400082: Bone.014
+    400084: Bone.014_end
+    400086: Bone.015
+    400088: Bone.016
+    400090: Bone.016_end
+    400092: Camera
+    400094: Camera.002
+    400096: Cylinder
+    400098: Cylinder.001
+    400100: eye
+    400102: Head
+    400104: Head_end
+    400106: Lamp
+    400108: Plane
+    400110: pupile
+    400112: suckers
+    400114: tentacles
     2300000: Cube.001
     2300002: Cube.002
     2300004: net
@@ -58,6 +138,16 @@ ModelImporter:
     2300028: playground
     2300030: pool
     2300032: water
+    2300034: bandana
+    2300036: birdie
+    2300038: body
+    2300040: Cylinder
+    2300042: Cylinder.001
+    2300044: eye
+    2300046: Plane
+    2300048: pupile
+    2300050: suckers
+    2300052: tentacles
     3300000: Cube.001
     3300002: Cube.002
     3300004: net
@@ -75,6 +165,16 @@ ModelImporter:
     3300028: playground
     3300030: pool
     3300032: water
+    3300034: bandana
+    3300036: birdie
+    3300038: body
+    3300040: Cylinder
+    3300042: Cylinder.001
+    3300044: eye
+    3300046: Plane
+    3300048: pupile
+    3300050: suckers
+    3300052: tentacles
     4300000: playfield
     4300002: Plane.002
     4300004: Plane.003
@@ -92,6 +192,16 @@ ModelImporter:
     4300028: Cube.001
     4300030: pool
     4300032: water
+    4300034: Cylinder.001
+    4300036: Cylinder
+    4300038: Plane
+    4300040: bandana
+    4300042: eye
+    4300044: pupile
+    4300046: tentacles
+    4300048: suckers
+    4300050: body
+    4300052: birdie
   materials:
     importMaterials: 1
     materialName: 1
@@ -123,7 +233,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
