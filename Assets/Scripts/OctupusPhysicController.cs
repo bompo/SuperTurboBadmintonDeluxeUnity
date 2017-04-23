@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OctupusPhysicController : MonoBehaviour {
+public class OctupusPhysicController : MonoBehaviour
+{
 
 	[SerializeField]
 	private Rigidbody head;
@@ -20,40 +21,34 @@ public class OctupusPhysicController : MonoBehaviour {
 	private float sinDelay = 2f;
 
 	[SerializeField]
-	private Vector3 forceLowerBones = new Vector3(0,0,0);
+	private Vector3 forceLowerBones = new Vector3 (0, 0, 0);
 
 	[SerializeField]
-	private Vector3 forceUpperBones = new Vector3(0,0,0);
+	private Vector3 forceUpperBones = new Vector3 (0, 0, 0);
 
 	[SerializeField]
-	private Vector3 forceHead = new Vector3(0,0.9f,0);
+	private Vector3 forceHead = new Vector3 (0, 0.9f, 0);
 
 	[SerializeField]
-	private Vector3 forceRacketBone = new Vector3(0,5f,0);
-		
-	private void OnEnable() {
-		Debug.Log ("OctupusPhysicController:OnEnable");
-		Debug.Log (Camera.main.transform.position);
-	}
+	private Vector3 forceRacketBone = new Vector3 (0, 5f, 0);
 
-	private void FixedUpdate() {
-		head.AddTorque (forceHead);
-
-		head.rotation.SetLookRotation (racket.transform.position);
-
+	private void FixedUpdate ()
+	{
 		if (Time.fixedTime < 1f) {
 			return;
 		}
 
+		head.AddForce (forceHead);
+
 		int i = 0;
 		foreach (var lowerBone in lowerBones) {
-			lowerBone.AddForce (forceLowerBones * Mathf.Sin(((i/(float)lowerBones.Count) * sinDelay) + Time.fixedTime));
+			lowerBone.AddForce (forceLowerBones * Mathf.Sin (((i / (float)lowerBones.Count) * sinDelay) + Time.fixedTime));
 			i++;
 		}
 
 		i = 0;
 		foreach (var upperBone in upperBones) {
-			upperBone.AddForce (forceUpperBones * Mathf.Sin(((i/(float)upperBones.Count) * sinDelay) + Time.fixedTime));
+			upperBone.AddForce (forceUpperBones * Mathf.Sin (((i / (float)upperBones.Count) * sinDelay) + Time.fixedTime));
 			i++;
 		}
 
