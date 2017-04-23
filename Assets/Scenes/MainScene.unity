@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 13aed0264d4058543878310342bc9816,
+    type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
@@ -188,6 +189,16 @@ Prefab:
     - target: {fileID: 4175254334061220, guid: fcda62b230f5e9f4a8d58b18261da9e7, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108157240981292866, guid: fcda62b230f5e9f4a8d58b18261da9e7,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108157240981292866, guid: fcda62b230f5e9f4a8d58b18261da9e7,
+        type: 2}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcda62b230f5e9f4a8d58b18261da9e7, type: 2}
@@ -601,11 +612,6 @@ Prefab:
       propertyPath: racket
       value: 
       objectReference: {fileID: 721836369}
-    - target: {fileID: 114983945573403478, guid: 7459fc994c87edf42861bcc8987fa503,
-        type: 2}
-      propertyPath: forceRacketBone.y
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7459fc994c87edf42861bcc8987fa503, type: 2}
   m_IsPrefabParent: 0

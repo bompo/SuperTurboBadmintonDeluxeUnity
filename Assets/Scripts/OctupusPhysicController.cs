@@ -37,7 +37,9 @@ public class OctupusPhysicController : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		head.AddForce (forceHead);
+		head.AddTorque (forceHead);
+
+		head.rotation.SetLookRotation (racket.transform.position);
 
 		if (Time.fixedTime < 1f) {
 			return;
