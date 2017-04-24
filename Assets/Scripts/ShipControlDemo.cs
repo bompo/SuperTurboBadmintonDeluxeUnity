@@ -67,6 +67,8 @@ public class ShipControlDemo : MonoBehaviour
 {
 	public float TurnSpeed = 500;
 	public float MaxAngularVelocity = 20;
+
+	public float InputTurnSpeed = 2;
 	
 	private float targetAngle;
 	private PID angleController;
@@ -77,6 +79,12 @@ public class ShipControlDemo : MonoBehaviour
 
 	[SerializeField]
 	private Rigidbody rigidbody;
+
+
+	private Rect leftRect = new Rect (0, 0, Screen.width / 2f, Screen.height);
+	private Rect rightRect = new Rect (Screen.width / 2f, 0, Screen.width / 2f, Screen.height);
+
+	private float touch;
 
 	void Awake ()
 	{
@@ -89,6 +97,31 @@ public class ShipControlDemo : MonoBehaviour
 	void FixedUpdate ()
 	{
 		float dt = Time.fixedDeltaTime;
+
+		var horizontalInput = Input.GetAxis ("Horizontal");
+		var verticalInput = Input.GetAxis ("Vertical");
+
+		if (Input.GetMouseButton (0)) {
+			if (leftRect.Contains (Input.mousePosition)) {
+				touch = Mathf.Lerp (touch, -1, dt * InputTurnSpeed);
+			} 
+			if (rightRect.Contains (Input.mousePosition)) {
+				touch = Mathf.Lerp (touch, 1, dt * InputTurnSpeed);
+			}
+		} else if (Input.touchCount > 0) {
+			if (leftRect.Contains (Input.GetTouch (0).position)) {
+				touch = Mathf.Lerp (touch, -1, dt * InputTurnSpeed);
+			} 
+			if (rightRect.Contains (Input.GetTouch (0).position)) {
+				touch = Mathf.Lerp (touch, 1, dt * InputTurnSpeed);
+			}
+		} else {
+			touch = Mathf.Lerp (touch, 0, dt * InputTurnSpeed);
+		}
+		horizontalInput = touch;
+
+		Debug.Log (horizontalInput);
+
 		
 		/*************************************************************************************
 		* Space Ship Control Demo
@@ -101,7 +134,7 @@ public class ShipControlDemo : MonoBehaviour
 		// The target angle is the user-driven angle that the ship will be (hopefully) 
 		// steered towards. The target angle is represented in Unity's scene view by a 
 		// white line.
-		targetAngle += Input.GetAxis ("Horizontal") * TurnSpeed * dt;
+		targetAngle += horizontalInput * TurnSpeed * dt;
 		
 		// The angle controller drives the ship's angle towards the target angle.
 		// This PID controller takes in the error between the ship's rotation angle 
@@ -126,7 +159,7 @@ public class ShipControlDemo : MonoBehaviour
 		// End: Space Ship Control Demo
 		/*************************************************************************************/
 
-		targetForce += Input.GetAxis ("Vertical") * TurnSpeed * dt;
+		targetForce += verticalInput * TurnSpeed * dt;
 		var force = transform.forward * (targetForce);
 		rigidbody.AddRelativeForce (Vector3.up * -targetForce, ForceMode.Acceleration);
 	}

@@ -44,7 +44,6 @@ public class FollowCam : MonoBehaviour
 
 	void Start ()
 	{
-
 		lookAtVector = new Vector3 (0, lookAtHeight, 0);
 
 	}
