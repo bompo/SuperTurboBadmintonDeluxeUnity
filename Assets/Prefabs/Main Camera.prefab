@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 81474330559435156}
   - component: {fileID: 114041464912857788}
   - component: {fileID: 114246437585253222}
+  - component: {fileID: 114785240965042048}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -54,7 +55,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -62,7 +63,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  distance: 5
+  distance: 5.5
   height: 1
   heightDamping: 2
   lookAtHeight: 0
@@ -128,8 +129,20 @@ MonoBehaviour:
   lookAtOffset: {x: 0, y: 0, z: 0}
   parentRigidbody: {fileID: 0}
   rotationSnapTime: 10
-  distanceSnapTime: 2
+  distanceSnapTime: 5
   distanceMultiplier: 0
+--- !u!114 &114785240965042048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950474335879454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c5b65db1fb9d2f04990dd48c9559e472, type: 2}
 --- !u!124 &124379557059364170
 Behaviour:
   m_ObjectHideFlags: 1
